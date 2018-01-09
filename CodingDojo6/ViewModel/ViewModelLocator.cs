@@ -52,7 +52,9 @@ namespace CodingDojo6.ViewModel
                 return ServiceLocator.Current.GetInstance<MainViewModel>();
             }
         }
-        
+
+        public object MessageBar { get; internal set; }
+
         public static void Cleanup()
         {
             // TODO Clear the ViewModels

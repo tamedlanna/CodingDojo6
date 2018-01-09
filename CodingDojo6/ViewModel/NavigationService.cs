@@ -21,11 +21,11 @@ namespace CodingDojo6.ViewModel
             return SimpleFactory(currentViewId);
         }
 
-        private ViewModelBase NavigateTo(string viewId) {
+        public ViewModelBase NavigateTo(string viewId) {
             return SimpleFactory(viewId);
         }
 
-        private ViewModelBase SimpleFactory(string viewId)
+        public ViewModelBase SimpleFactory(string viewId)
         {
             lastViewId = currentViewId;
             switch(viewId) {
@@ -41,5 +41,7 @@ namespace CodingDojo6.ViewModel
                     return SimpleFactory(currentViewId);
             }
         }
+
+        
     }
 }

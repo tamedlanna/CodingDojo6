@@ -12,9 +12,14 @@
   See http://www.galasoft.ch/mvvm
 */
 
+using GalaSoft.MvvmLight.Messaging;
+
 namespace CodingDojo6.ViewModel
 {
-    internal interface ImessageBar
+    public interface ImessageBar
     {
+        void RegisterOnMessage(Messenger messanger, string token);
+        void SetDisplayTime(int time);
+        void ShowInfo(Message msg);
     }
 }

@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 
+
 namespace CodingDojo6.ViewModel
 {
     public class MainViewModel : ViewModelBase

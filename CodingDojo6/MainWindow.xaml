@@ -20,7 +20,7 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="0" Grid.Row="1">
-            <Button Content="Overview" Height="30" Width="40" Content="{Binding }"></Button>
+            <Button Content="Overview" Height="30" Width="40" ></Button>
             <Button Content="My Toys" Height="30" Width="40"></Button>
         </StackPanel>
 

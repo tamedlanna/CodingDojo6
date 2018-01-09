@@ -14,7 +14,9 @@
 
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
+using GalaSoft.MvvmLight.Messaging;
 using Microsoft.Practices.ServiceLocation;
+using System.Windows.Navigation;
 
 namespace CodingDojo6.ViewModel
 {
@@ -29,20 +31,14 @@ namespace CodingDojo6.ViewModel
         /// </summary>
         public ViewModelLocator()
         {
-            ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
+            ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);          
 
-            ////if (ViewModelBase.IsInDesignModeStatic)
-            ////{
-            ////    // Create design time view services and models
-            ////    SimpleIoc.Default.Register<IDataService, DesignDataService>();
-            ////}
-            ////else
-            ////{
-            ////    // Create run time view services and models
-            ////    SimpleIoc.Default.Register<IDataService, DataService>();
-            ////}
-
+            SimpleIoc.Default.Register<Messenger>();
             SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<OverviewVm>();
+            SimpleIoc.Default.Register<MyToysVm>();
+            SimpleIoc.Default.Register<NavigationService>();
+            SimpleIoc.Default.Register<MessageBarVm>();
         }
 
         public MainViewModel Main

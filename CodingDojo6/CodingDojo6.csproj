@@ -71,6 +71,10 @@
     </ApplicationDefinition>
     <Compile Include="ViewModel\ItemVm.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\MessageBarVm.cs" />
+    <Compile Include="ViewModel\MyToysVm.cs" />
+    <Compile Include="ViewModel\NavigationService.cs" />
+    <Compile Include="ViewModel\OverviewVm.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="Views\MyToys.xaml.cs">
       <DependentUpon>MyToys.xaml</DependentUpon>

@@ -12,9 +12,23 @@
   See http://www.galasoft.ch/mvvm
 */
 
+using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Messaging;
+using System.Windows;
+using System.Windows.Media.Imaging;
+using System.Windows.Threading;
+
 namespace CodingDojo6.ViewModel
 {
-    internal class MessageBarVm
+    public class MessageBarVm : ViewModelBase, ImessageBar
     {
+        private Messenger messenger = null;
+        private string message;
+        private BitmapImage image;
+        private DispatcherTimer timer;
+        private int DisplayTime = 2;
+        private Visibility visible;
+
+
     }
 }

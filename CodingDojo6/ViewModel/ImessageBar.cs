@@ -12,6 +12,7 @@
   See http://www.galasoft.ch/mvvm
 */
 
+using CodingDojo6.Model;
 using GalaSoft.MvvmLight.Messaging;
 
 namespace CodingDojo6.ViewModel

@@ -19,6 +19,8 @@ using GalaSoft.MvvmLight.Messaging;
 using System;
 using System.Collections.ObjectModel;
 using System.Windows.Media.Imaging;
+using CodingDojo6.ViewModel;
+using CodingDojo6.Model;
 
 namespace CodingDojo6.ViewModel
 {

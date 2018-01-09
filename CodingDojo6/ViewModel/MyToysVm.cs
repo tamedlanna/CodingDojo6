@@ -22,7 +22,7 @@ namespace CodingDojo6.ViewModel
     public class MyToysVm : ViewModelBase
     {
 
-        private Messenger messenger = new SimpleIoc.Default.GetInstance<Messenger>();
+        private Messenger messenger = SimpleIoc.Default.GetInstance<Messenger>();
         public ObservableCollection<ItemVm> MyToys { get; set; }
 
         public MyToysVm(){

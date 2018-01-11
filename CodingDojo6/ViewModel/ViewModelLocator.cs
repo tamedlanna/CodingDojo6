@@ -35,8 +35,8 @@ namespace CodingDojo6.ViewModel
 
             SimpleIoc.Default.Register<Messenger>();
             SimpleIoc.Default.Register<MainViewModel>();
-            SimpleIoc.Default.Register<OverviewVm>();
-            SimpleIoc.Default.Register<MyToysVm>();
+            SimpleIoc.Default.Register<OverviewVm>(true);
+            SimpleIoc.Default.Register<MyToysVm>(true);
             SimpleIoc.Default.Register<NavigationService>();
             SimpleIoc.Default.Register<MessageBarVm>();
         }
@@ -49,7 +49,32 @@ namespace CodingDojo6.ViewModel
             }
         }
 
-        public MessageBarVm MessageBar => ServiceLocator.Current.GetInstance<MessageBarVm>();
+        public MessageBarVm MessageBar
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<MessageBarVm>();
+            }
+        }
+
+        public OverviewVm Overview
+
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<OverviewVm>();
+            }
+        }
+
+        public MyToysVm MyToys
+
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<MyToysVm>();
+            }
+        }
+      
 
         public static void Cleanup()
         {

@@ -100,16 +100,16 @@ namespace CodingDojo6.ViewModel
             switch (msg.State)
             {
                 case MessageState.Warning:
-                    Symbol = new BitmapImage(new Uri("../Images/state_Warning.png", UriKind.Relative));
+                    Symbol = new BitmapImage(new Uri("../Image/state_Warning.png", UriKind.Relative));
                     break;
                 case MessageState.Error:
-                    Symbol = new BitmapImage(new Uri("../Images/state_Error.png", UriKind.Relative));
+                    Symbol = new BitmapImage(new Uri("../Image/state_Error.png", UriKind.Relative));
                     break;
                 case MessageState.Info:
-                    Symbol = new BitmapImage(new Uri("Images/state_Info.png", UriKind.Relative));
+                    Symbol = new BitmapImage(new Uri("Image/state_Info.png", UriKind.Relative));
                     break;
                 case MessageState.Ok:
-                    Symbol = new BitmapImage(new Uri("../Images/state_Ok.png", UriKind.Relative));
+                    Symbol = new BitmapImage(new Uri("../Image/state_Ok.png", UriKind.Relative));
                     break;
                 default:
                     break;
@@ -133,7 +133,8 @@ namespace CodingDojo6.ViewModel
 
         public void RegisterOnMessage(Messenger messanger, string token)
         {
-            throw new NotImplementedException();
+            this.messenger = messanger;
+            messenger.Register<PropertyChangedMessage<Message>>(this, token, showContent);
         }
     }
     }

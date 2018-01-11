@@ -13,7 +13,7 @@
 */
 
 using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 using System;
@@ -59,10 +59,10 @@ namespace CodingDojo6.ViewModel
         public OverviewVm() {
             BuyBtnClicked = new RelayCommand<ItemVm>((p) =>
             {
-                messenger.Send<PropertyChangedMessage<ItemVm>>(new PropertyChangedMessage<ItemVm>(null, p, "AddNew"), "Write");
+                messenger.Send<PropertyChangedMessage<ItemVm>>(new PropertyChangedMessage<ItemVm>(null, p, "AddNew"),"Write");
                 messenger.Send<PropertyChangedMessage<Message>>(new PropertyChangedMessage<Message>(null, new Message("New Entry Added",MessageState.Info), ""), "@Message");
-            });
-
+            },
+            (p) => { return true; });
             Items = new ObservableCollection<ItemVm>();
             GenerateDemoData();
         }

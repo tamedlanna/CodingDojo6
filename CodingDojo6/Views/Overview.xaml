@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:CodingDojo6.Views"
              mc:Ignorable="d" 
               DataContext="{Binding Source={StaticResource Locator}, Path=Overview}"
-             d:DesignHeight="800" d:DesignWidth="500">
+             d:DesignHeight="500" d:DesignWidth="800">
     <UserControl.Resources>
         <DataTemplate x:Key="LeftLayout">
             <Border BorderThickness="2" BorderBrush="Black" Width="200" CornerRadius="2">
@@ -32,7 +32,7 @@
             </StackPanel>
         </DataTemplate>
     </UserControl.Resources>
-
+    
 
 
     <Grid>

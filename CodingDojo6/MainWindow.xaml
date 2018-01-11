@@ -21,8 +21,8 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="0" Grid.Row="1">
-            <Button Content="Overview" Height="30" Width="80" Command="{Binding OverviewBtnClicked}" ></Button>
+        <StackPanel Grid.Column="0" Grid.Row="1" Margin="5">
+            <Button Content="Overview" Height="30" Width="80" Command="{Binding OverviewBtnClicked}" Margin="5" ></Button>
             <Button Content="My Toys" Height="30" Width="80" Command="{Binding MyToysBtnClicked}"></Button>
         </StackPanel>
 

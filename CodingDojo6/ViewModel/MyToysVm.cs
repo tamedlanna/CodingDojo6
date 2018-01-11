@@ -16,7 +16,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 using System.Collections.ObjectModel;
-
+using GalaSoft.MvvmLight.CommandWpf;
 namespace CodingDojo6.ViewModel
 {
     public class MyToysVm : ViewModelBase
@@ -27,7 +27,7 @@ namespace CodingDojo6.ViewModel
 
         public MyToysVm(){
             MyToys = new ObservableCollection<ItemVm>();
-            messenger.Register<PropertyChangedMessage<ItemVm>>(this, "write", update);
+            messenger.Register<PropertyChangedMessage<ItemVm>>(this,"Write", update);
 }
 
         private void update(PropertyChangedMessage<ItemVm> obj) {

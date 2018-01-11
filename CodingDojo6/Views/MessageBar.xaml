@@ -8,12 +8,12 @@
              d:DesignHeight="60" d:DesignWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="75"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Image Source="{Binding Symbol}" Margin="10" ></Image>
-        <Border BorderBrush="Black" BorderThickness="4" CornerRadius="9" Margin="4" Visibility="{Binding Visible}">
-            <Label Height="50" VerticalAlignment="Center" Margin="7" Content="{Binding Message}"></Label>
+        <Image Source="{Binding Symbol}" Margin="10"></Image>
+        <Border Grid.Column="1" BorderBrush="Black" BorderThickness="4" CornerRadius="9" Margin="4" Visibility="{Binding Visible}">
+            <Label Height="25" VerticalAlignment="Center" Margin="5" Content="{Binding Message}"></Label>
         </Border>
         
     </Grid>

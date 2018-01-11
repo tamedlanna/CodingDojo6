@@ -33,7 +33,7 @@ namespace CodingDojo6.ViewModel
                     currentViewId = viewId;
                     return SimpleIoc.Default.GetInstance<OverviewVm>();
 
-                case "My Toys":
+                case "MyToys":
                     currentViewId = viewId;
                     return SimpleIoc.Default.GetInstance<MyToysVm>();
 

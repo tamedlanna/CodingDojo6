@@ -33,7 +33,7 @@ namespace CodingDojo6.ViewModel
 
         public MainViewModel() {
             OverviewBtnClicked = new RelayCommand(() => { currentView = nav.NavigateTo("Overview"); });
-            MyToysBtnClicked = new RelayCommand(() => { currentView = nav.NavigateTo("My Toys"); });
+            MyToysBtnClicked = new RelayCommand(() => { currentView = nav.NavigateTo("MyToys"); });
 
             currentView = nav.NavigateTo("Overview");
 

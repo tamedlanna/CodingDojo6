@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using CodingDojo6.ViewModel;
+using CodingDojo6.Interfaces;
 
 
 namespace CodingDojo6.ViewModel
@@ -36,7 +37,7 @@ namespace CodingDojo6.ViewModel
 
             currentView = nav.NavigateTo("Overview");
 
-            (App.Current.Resources["Locator"] as ViewModelLocator).IMessageBar.RegisterOnMessenger(SimpleIoc.Default.GetInstance<Messenger>(), "@message");
+            (App.Current.Resources["Locator"] as ViewModelLocator).MessageBar.RegisterOnMessenger(SimpleIoc.Default.GetInstance<Messenger>(), "@Message");
         }
     }
 }

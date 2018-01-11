@@ -45,12 +45,14 @@ namespace CodingDojo6.ViewModel
         public RelayCommand<ItemVm> BuyBtnClicked {
             get
             {
-                return BuyBtnClicked;
+                return buyBtnClicked;
             }
             set
             {
-                BuyBtnClicked = value;
-                RaisePropertyChanged();
+               
+                    buyBtnClicked = value;
+                    RaisePropertyChanged();
+                
             }
         }
 
@@ -68,28 +70,28 @@ namespace CodingDojo6.ViewModel
         private void GenerateDemoData()
         {
 
-            Items.Add(new ItemVm("Lego", new BitmapImage(new Uri("../Images/lego1.jpg", UriKind.Relative)), "-"));
-            Items.Add(new ItemVm("Playmobil", new BitmapImage(new Uri("../Images/playmobil1.jpg", UriKind.Relative)), "-"));
+            Items.Add(new ItemVm("Lego", new BitmapImage(new Uri("../Image/lego1.jpg", UriKind.Relative)), "-"));
+            Items.Add(new ItemVm("Playmobil", new BitmapImage(new Uri("../Image/playmobil1.jpg", UriKind.Relative)), "-"));
             Items[Items.Count - 1].AddItem(
-                new ItemVm("Playmobil 2", new BitmapImage(new Uri("../Images/playmobil2.jpg", UriKind.Relative)), "5+"));
+                new ItemVm("Playmobil 2", new BitmapImage(new Uri("../Image/playmobil2.jpg", UriKind.Relative)), "5+"));
             Items[Items.Count - 1].AddItem(
-                new ItemVm("Playmobil 3", new BitmapImage(new Uri("../Images/playmobil3.jpg", UriKind.Relative)), "10+"));
+                new ItemVm("Playmobil 3", new BitmapImage(new Uri("../Image/playmobil3.jpg", UriKind.Relative)), "10+"));
             Items[Items.Count - 1].AddItem(
-               new ItemVm("Playmobil 2", new BitmapImage(new Uri("../Images/playmobil2.jpg", UriKind.Relative)), "5+"));
+               new ItemVm("Playmobil 2", new BitmapImage(new Uri("../Image/playmobil2.jpg", UriKind.Relative)), "5+"));
             Items[Items.Count - 1].AddItem(
-                new ItemVm("Playmobil 3", new BitmapImage(new Uri("../Images/playmobil3.jpg", UriKind.Relative)), "10+"));
+                new ItemVm("Playmobil 3", new BitmapImage(new Uri("../Image/playmobil3.jpg", UriKind.Relative)), "10+"));
             Items[Items.Count - 1].AddItem(
-               new ItemVm("Playmobil 2", new BitmapImage(new Uri("../Images/playmobil2.jpg", UriKind.Relative)), "5+"));
+               new ItemVm("Playmobil 2", new BitmapImage(new Uri("../Image/playmobil2.jpg", UriKind.Relative)), "5+"));
             Items[Items.Count - 1].AddItem(
-                new ItemVm("Playmobil 3", new BitmapImage(new Uri("../Images/playmobil3.jpg", UriKind.Relative)), "10+"));
+                new ItemVm("Playmobil 3", new BitmapImage(new Uri("../Image/playmobil3.jpg", UriKind.Relative)), "10+"));
             Items[Items.Count - 1].AddItem(
-               new ItemVm("Playmobil 2", new BitmapImage(new Uri("../Images/playmobil2.jpg", UriKind.Relative)), "5+"));
+               new ItemVm("Playmobil 2", new BitmapImage(new Uri("../Image/playmobil2.jpg", UriKind.Relative)), "5+"));
             Items[Items.Count - 1].AddItem(
-                new ItemVm("Playmobil 3", new BitmapImage(new Uri("../Images/playmobil3.jpg", UriKind.Relative)), "10+"));
+                new ItemVm("Playmobil 3", new BitmapImage(new Uri("../Image/playmobil3.jpg", UriKind.Relative)), "10+"));
             Items[Items.Count - 1].AddItem(
-               new ItemVm("Playmobil 2", new BitmapImage(new Uri("../Images/playmobil2.jpg", UriKind.Relative)), "5+"));
+               new ItemVm("Playmobil 2", new BitmapImage(new Uri("../Image/playmobil2.jpg", UriKind.Relative)), "5+"));
             Items[Items.Count - 1].AddItem(
-                new ItemVm("Playmobil 3", new BitmapImage(new Uri("../Images/playmobil3.jpg", UriKind.Relative)), "10+"));
+                new ItemVm("Playmobil 3", new BitmapImage(new Uri("../Image/playmobil3.jpg", UriKind.Relative)), "10+"));
         }
     }
 }

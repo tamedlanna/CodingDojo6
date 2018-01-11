@@ -10,7 +10,7 @@ namespace CodingDojo6.Interfaces
 {
     public interface IMessageBar
     {
-        void RegisterOnMessenger(Messenger messenger, string token);
+        void RegisterOnMessenger(Messenger messanger, string token);
         void SetDisplayTime(int time);
         void ShowInfo(Message msg);
     }

@@ -4,10 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CodingDojo6"
-        mc:Ignorable="d"
+         xmlns:views="clr-namespace:CodingDojo6.Views"
+       
+        xmlns:vm="clr-namespace:CodingDojo6.ViewModel"
+         mc:Ignorable="d"
          DataContext="{Binding Source={StaticResource Locator}, Path=Main}"
-         Title="MainWindow" Height="500" Width="800" 
-         >
+         Title="MainWindow" Height="500" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -20,18 +22,23 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="0" Grid.Row="1">
-            <Button Content="Overview" Height="30" Width="40" ></Button>
-            <Button Content="My Toys" Height="30" Width="40"></Button>
+            <Button Content="Overview" Height="30" Width="80" Command="{Binding OverviewBtnClicked}" ></Button>
+            <Button Content="My Toys" Height="30" Width="80" Command="{Binding MyToysBtnClicked}"></Button>
         </StackPanel>
 
         <Border Grid.Column="1" Grid.Row="1">
-            <ContentControl>
+            <ContentControl Content="{Binding CurrentView}" >
                 <ContentControl.Resources>
-                    <DataTemplate></DataTemplate>
-                    <DataTemplate></DataTemplate>
+                    <DataTemplate DataType="{x:Type vm:OverviewVm}">
+                        <views:Overview/>
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type vm:MyToysVm}">
+                        <views:MyToys/>
+                    </DataTemplate>
                 </ContentControl.Resources>
             </ContentControl>
         </Border>
-       
+        <views:MessageBar Grid.Row="2" Grid.Column="1" DataContext="{Binding Source={StaticResource Locator}, Path=MessageBar}"/>
+
     </Grid>
 </Window>

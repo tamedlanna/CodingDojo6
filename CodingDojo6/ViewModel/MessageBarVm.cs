@@ -22,24 +22,28 @@ using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 using CodingDojo6.Interfaces;
 using CodingDojo6.ViewModel;
+
 namespace CodingDojo6.ViewModel
 {
     public class MessageBarVm : ViewModelBase, IMessageBar
     {
         private Messenger messenger = null;
+
         private string message;
         private BitmapImage symbol;
         private DispatcherTimer timer;
         private int displayTime = 2;
         private Visibility visible;
-
-        public String Message {
-            get {
+        public string Message
+        {
+            get
+            {
                 return message;
             }
-            set {
-                message = value;
-                RaisePropertyChanged();
+
+            set
+            {
+                message = value; RaisePropertyChanged();
             }
         }
 
@@ -49,14 +53,12 @@ namespace CodingDojo6.ViewModel
             {
                 return symbol;
             }
+
             set
             {
-                symbol = value;
-                RaisePropertyChanged();
+                symbol = value; RaisePropertyChanged();
             }
         }
-      
-       
 
         public Visibility Visible
         {
@@ -64,18 +66,20 @@ namespace CodingDojo6.ViewModel
             {
                 return visible;
             }
+
             set
             {
-                visible = value;
-                RaisePropertyChanged();
+                visible = value; RaisePropertyChanged();
             }
         }
-        public MessageBarVm() {
+
+        public MessageBarVm()
+        {
             timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, displayTime);
             timer.Tick += Timer_Tick;
-
         }
+
 
         private void Timer_Tick(object sender, EventArgs e)
         {
@@ -85,7 +89,8 @@ namespace CodingDojo6.ViewModel
             Visible = Visibility.Hidden;
         }
 
-        public void SetDisplayTime(int time) {
+        public void SetDisplayTime(int time)
+        {
             displayTime = time;
         }
 
@@ -95,16 +100,16 @@ namespace CodingDojo6.ViewModel
             switch (msg.State)
             {
                 case MessageState.Warning:
-                    Symbol = new BitmapImage(new Uri("../Image/state_Warning.png", UriKind.Relative));
+                    Symbol = new BitmapImage(new Uri("../Images/state_Warning.png", UriKind.Relative));
                     break;
                 case MessageState.Error:
-                    Symbol = new BitmapImage(new Uri("../Image/state_Error.png", UriKind.Relative));
+                    Symbol = new BitmapImage(new Uri("../Images/state_Error.png", UriKind.Relative));
                     break;
                 case MessageState.Info:
-                    Symbol = new BitmapImage(new Uri("Image/state_Info.png", UriKind.Relative));
+                    Symbol = new BitmapImage(new Uri("Images/state_Info.png", UriKind.Relative));
                     break;
                 case MessageState.Ok:
-                    Symbol = new BitmapImage(new Uri("../Image/state_Ok.png", UriKind.Relative));
+                    Symbol = new BitmapImage(new Uri("../Images/state_Ok.png", UriKind.Relative));
                     break;
                 default:
                     break;
@@ -113,18 +118,22 @@ namespace CodingDojo6.ViewModel
             timer.Start();
         }
 
-
-        public void RegisterOnMessage(Messenger messanger, string token)
+        //Register on Messenger
+        public void RegisterOnMessenger(Messenger messanger, string token)
         {
             this.messenger = messanger;
-            messenger.Register<PropertyChangedMessage<Message>>(this, token, shwContent);
+            messenger.Register<PropertyChangedMessage<Message>>(this, token, showContent);
         }
 
-        private void shwContent(PropertyChangedMessage<Message> obj)
+        //Display Info
+        private void showContent(PropertyChangedMessage<Message> obj)
         {
             ShowInfo(obj.NewValue);
         }
 
-       
+        public void RegisterOnMessage(Messenger messanger, string token)
+        {
+            throw new NotImplementedException();
+        }
     }
-}
+    }

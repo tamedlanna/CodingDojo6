@@ -49,7 +49,7 @@ namespace CodingDojo6.ViewModel
             }
         }
 
-        public object MessageBar { get; internal set; }
+        public MessageBarVm IMessageBar => ServiceLocator.Current.GetInstance<MessageBarVm>();
 
         public static void Cleanup()
         {

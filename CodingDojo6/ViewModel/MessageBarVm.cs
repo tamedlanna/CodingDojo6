@@ -20,16 +20,17 @@ using System.Runtime.Remoting.Messaging;
 using System.Windows;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
-
+using CodingDojo6.Interfaces;
+using CodingDojo6.ViewModel;
 namespace CodingDojo6.ViewModel
 {
-    public class MessageBarVm : ViewModelBase, ImessageBar
+    public class MessageBarVm : ViewModelBase, IMessageBar
     {
         private Messenger messenger = null;
         private string message;
         private BitmapImage symbol;
         private DispatcherTimer timer;
-        private int DisplayTime = 2;
+        private int displayTime = 2;
         private Visibility visible;
 
         public String Message {
@@ -54,6 +55,8 @@ namespace CodingDojo6.ViewModel
                 RaisePropertyChanged();
             }
         }
+      
+       
 
         public Visibility Visible
         {
@@ -69,7 +72,7 @@ namespace CodingDojo6.ViewModel
         }
         public MessageBarVm() {
             timer = new DispatcherTimer();
-            timer.Interval = new TimeSpan(0, 0, DisplayTime);
+            timer.Interval = new TimeSpan(0, 0, displayTime);
             timer.Tick += Timer_Tick;
 
         }
@@ -83,7 +86,7 @@ namespace CodingDojo6.ViewModel
         }
 
         public void SetDisplayTime(int time) {
-            DisplayTime = time;
+            displayTime = time;
         }
 
         public void ShowInfo(Message msg)
@@ -110,7 +113,9 @@ namespace CodingDojo6.ViewModel
             timer.Start();
         }
 
-        public void RegisterOnMessage(Messenger messanger, string token) {
+
+        public void RegisterOnMessage(Messenger messanger, string token)
+        {
             this.messenger = messanger;
             messenger.Register<PropertyChangedMessage<Message>>(this, token, shwContent);
         }
@@ -119,5 +124,7 @@ namespace CodingDojo6.ViewModel
         {
             ShowInfo(obj.NewValue);
         }
+
+       
     }
 }

@@ -17,7 +17,7 @@ using GalaSoft.MvvmLight.Messaging;
 
 namespace CodingDojo6.ViewModel
 {
-    public interface ImessageBar
+    public interface IMessageBar
     {
         void RegisterOnMessage(Messenger messanger, string token);
         void SetDisplayTime(int time);

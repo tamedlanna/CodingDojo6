@@ -58,7 +58,7 @@ namespace CodingDojo6.ViewModel
             BuyBtnClicked = new RelayCommand<ItemVm>((p) =>
             {
                 messenger.Send<PropertyChangedMessage<ItemVm>>(new PropertyChangedMessage<ItemVm>(null, p, "AddNew"), "Write");
-                messenger.Send<PropertyChangedMessage<Message>>(new PropertyChangedMessage<ItemVm>(null, new Message("New Entry Added",MessageState.Info), ""), "@Message");
+                messenger.Send<PropertyChangedMessage<Message>>(new PropertyChangedMessage<Message>(null, new Message("New Entry Added",MessageState.Info), ""), "@Message");
             });
 
             Items = new ObservableCollection<ItemVm>();

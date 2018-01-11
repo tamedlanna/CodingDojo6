@@ -36,7 +36,7 @@ namespace CodingDojo6.ViewModel
 
             currentView = nav.NavigateTo("Overview");
 
-            (App.Current.Resources["Locator"] as ViewModelLocator).MessageBar.RegisterOnMessage(SimpleIoc.Default.GetInstance<Messenger>(), "@message");
+            (App.Current.Resources["Locator"] as ViewModelLocator).IMessageBar.RegisterOnMessenger(SimpleIoc.Default.GetInstance<Messenger>(), "@message");
         }
     }
 }
